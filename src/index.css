@@ -1,0 +1,287 @@
+/* Variables */
+
+:root {
+  --color-text: hsl(0, 0%, 100%);
+  --color-key: hsl(221, 14%, 31%);
+  --key-shadow: hsl(28, 16%, 65%);
+  --key-focus: white;
+  --special-key-color: hsl(0, 0%, 100%);
+  --equal-color: hsl(0, 0%, 100%);
+  --main-background: hsl(222, 26%, 31%);
+  --toggle-background: hsl(223, 31%, 20%);
+  --toggle: hsl(6, 63%, 50%);
+  --equal-background-color: hsl(6, 63%, 50%);
+  --equal-shadow: hsl(6, 70%, 34%);
+  --equal-focus: hsla(6, 93%, 67%, 1);
+  --reset-background-color: hsl(225, 21%, 49%);
+  --reset-shadow: hsl(224, 28%, 35%);
+  --reset-focus: hsla(224, 51%, 76%, 1);
+  --del-background-color: hsl(225, 21%, 49%);
+  --del-shadow: hsl(224, 28%, 35%);
+  --del-focus: hsla(224, 51%, 76%, 1);
+  --key-background: hsl(30, 25%, 89%);
+  --keypad-background: hsl(223, 31%, 20%);
+  --screen-background: hsl(224, 36%, 15%);
+}
+
+/* End Variables */
+
+/* REST */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*  REST END */
+
+/* General */
+
+body {
+  background-color: var(--main-background);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+}
+
+.container {
+  width: 540px;
+}
+
+/* End General */
+
+/* Header */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: League Spartan;
+  color: var(--color-text);
+}
+
+h1 {
+  color: var(--color-text);
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.533px;
+  align-self: self-end;
+}
+
+h3 {
+  color: var(--color-text);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1px;
+  align-self: self-end;
+  margin-bottom: 5px;
+}
+
+/* Theme */
+
+.theme {
+  display: flex;
+  gap: 26px;
+}
+
+.toggle {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+}
+
+.toggle label {
+  grid-row: 1/2;
+  color: var(--color-text);
+  font-size: 12px;
+  font-weight: 700;
+  justify-self: center;
+  cursor: pointer;
+}
+
+.toggle .inputs {
+  grid-column: 1/-1;
+  background-color: var(--toggle-background);
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 5px;
+  border-radius: 13px;
+}
+
+input[type="radio"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input:checked {
+  border: 8px solid var(--toggle);
+}
+
+#box2:checked {
+  --toggle: hsl(25, 98%, 40%);
+}
+
+#box3:checked {
+  --toggle: hsl(176, 100%, 44%);
+}
+
+body:has(#box2:checked) {
+  --main-background: hsl(0, 0%, 90%);
+  --toggle-background: hsl(0, 5%, 81%);
+  --color-text: hsl(60, 10%, 19%);
+  --screen-background: hsl(0, 0%, 93%);
+  --keypad-background: hsl(0, 5%, 81%);
+  --color-key: hsl(60, 10%, 19%);
+  --key-background: hsl(45, 7%, 89%);
+  --key-shadow: hsl(35, 11%, 61%);
+  --equal-background-color: hsl(25, 98%, 40%);
+  --equal-shadow: hsl(25, 99%, 27%);
+  --equal-focus: hsla(25, 100%, 61%, 1);
+  --reset-background-color: hsl(185, 42%, 37%);
+  --reset-shadow: hsl(185, 58%, 25%);
+  --reset-focus: hsla(184, 40%, 56%, 1);
+  --del-background-color: hsl(185, 42%, 37%);
+  --del-shadow: hsl(185, 58%, 25%);
+  --del-focus: hsla(184, 40%, 56%, 1);
+}
+
+body:has(#box3:checked) {
+  --main-background: hsl(268, 75%, 9%);
+  --toggle-background: hsl(268, 71%, 12%);
+  --color-text: hsl(52, 100%, 62%);
+  --screen-background: hsl(268, 71%, 12%);
+  --keypad-background: hsl(268, 71%, 12%);
+  --key-shadow: hsl(290, 70%, 36%);
+  --key-background: hsl(268, 47%, 21%);
+  --key-focus: hsla(268, 54%, 44%, 1);
+  --color-key: hsl(52, 100%, 62%);
+  --equal-background-color: hsl(176, 100%, 44%);
+  --equal-shadow: hsl(177, 92%, 70%);
+  --equal-focus: hsla(176, 100%, 79%, 1);
+  --equal-color: hsl(198, 20%, 13%);
+  --reset-background-color: hsl(281, 89%, 26%);
+  --reset-shadow: hsl(285, 91%, 52%);
+  --reset-focus: hsla(280, 56%, 44%, 1);
+  --del-background-color: hsl(281, 89%, 26%);
+  --del-shadow: hsl(285, 91%, 52%);
+  --del-focus: hsla(280, 56%, 44%, 1);
+}
+
+/* End Theme */
+
+/* End Header */
+
+/* Screen */
+
+.screen {
+  width: 540px;
+  margin-top: 32px;
+  font-size: 56px;
+  text-align: right;
+  font-family: League Spartan;
+  font-weight: 700;
+  padding: 32px;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  letter-spacing: -0.933px;
+  color: var(--color-text);
+  background-color: var(--screen-background);
+}
+
+/* End Screen */
+
+/* Keypad */
+
+.keypad {
+  margin-top: 24px;
+  background-color: var(--keypad-background);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 32px;
+  border-radius: 8px;
+  gap: 16px;
+}
+
+.key {
+  background-color: var(--key-background);
+  box-shadow: 0px -4px 0px 0px var(--key-shadow) inset;
+  color: var(--color-key);
+  text-align: center;
+  font-family: League Spartan;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.667px;
+  padding: 8px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+}
+
+.key:focus {
+  background-color: var(--key-focus);
+}
+
+.reset {
+  background-color: var(--reset-background-color);
+  grid-column: 1 / 3;
+  color: var(--special-key-color);
+  font-size: 28px;
+  box-shadow: 0px -4px 0px 0px var(--reset-shadow) inset;
+}
+
+.reset:focus {
+  background-color: var(--reset-focus);
+}
+
+.del {
+  background-color: var(--del-background-color);
+  box-shadow: 0px -4px 0px 0px var(--del-shadow) inset;
+  color: var(--special-key-color);
+  font-size: 28px;
+}
+
+.del:focus {
+  background-color: var(--del-focus);
+}
+
+.equal {
+  background-color: var(--equal-background-color);
+  grid-column: 3/5;
+  color: var(--equal-color);
+  font-size: 28px;
+  box-shadow: 0px -4px 0px 0px var(--equal-shadow) inset;
+}
+
+.equal:focus {
+  background-color: var(--equal-focus);
+}
+/* End Keypad */
+
+/* Responsive */
+
+@media (max-width: 800px) {
+  .container {
+    width: 327px;
+  }
+  .screen {
+    width: 327px;
+    font-size: 40px;
+  }
+  .keypad {
+    padding: 24px;
+    gap: 13px;
+  }
+  .key {
+    font-size: 24px;
+  }
+}
+/* End Responsive */
