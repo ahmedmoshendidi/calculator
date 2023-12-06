@@ -118,6 +118,7 @@ input[type="radio"] {
   height: 16px;
   border-radius: 50%;
   cursor: pointer;
+  border: 8px solid var(--toggle-background);
 }
 
 input:checked {
